@@ -32,4 +32,12 @@
  */
 export function calculateCoffeePrice(size, type, extras = {}) {
   // Your code here
+
+  if (size != small && size != medium && size != large) return -1;
+  if (type != regular && type !=latte && type != cappuccino && type != mocha) return -1;
+
+  const roundprice = price.fixed(2)
+
+
+  
 }
