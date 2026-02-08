@@ -33,11 +33,32 @@
 export function calculateCoffeePrice(size, type, extras = {}) {
   // Your code here
 
-  if (size != small && size != medium && size != large) return -1;
-  if (type != regular && type !=latte && type != cappuccino && type != mocha) return -1;
+  if (size != "small" && size != "medium" && size != "large") return -1;
+  if (type != "regular" && type != "latte" && type != "cappuccino" && type != "mocha") return -1;
+  
+  let total = 0;
 
-  const roundprice = price.fixed(2)
+  switch (size){
+    case "small":
+      total += 3.00;
+      break;
 
+    case "medium":
+      total += 4.00;
+      break;
+
+    case "large":
+      total += 5.00;
+      break;
+
+    default:
+    return -1;
+  }
+
+  switch (type){
+    case "latte":
+      total += 1.00;
+  }
 
   
 }
