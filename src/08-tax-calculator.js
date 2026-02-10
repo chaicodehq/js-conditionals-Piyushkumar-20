@@ -27,4 +27,30 @@
  */
 export function calculateTax(income) {
   // Your code here
+
+  if (income <= 0) {
+    return 0;
+  }
+  let totalTax = 0;
+
+  if (income > 70000) {
+    totalTax += 0.3 * (income - 70000);
+    income = 70000;
+  }
+
+  if (income > 30000) {
+    totalTax +=  0.2 * (income - 30000);
+    income = 30000;
+  }
+
+  if (income > 10000) {
+    totalTax += (income - 10000) * 0.1;
+    income = 10000;
+  }
+
+  if (income > 0) {
+    totalTax += (income - 0) * 0;
+  }
+
+  return +totalTax.toFixed(2);
 }
